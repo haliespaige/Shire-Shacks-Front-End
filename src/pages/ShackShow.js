@@ -2,11 +2,11 @@ import React from 'react'
 
 const ShackShow = () => {
 
-return(
-<>
-    <h1>ShackShow</h1>
-</>
-)
+  return (
+    <>
+      <h1>ShackShow</h1>
+    </>
+  )
 
 }
 
