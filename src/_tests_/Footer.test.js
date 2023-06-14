@@ -10,8 +10,6 @@ describe("<Footer />", () => {
       </BrowserRouter>
     );
 
-    screen.logTestingPlaygroundURL();
-
     const footLink = screen.getByRole("link", {
       name: /Shire Shacks In/i,
     });

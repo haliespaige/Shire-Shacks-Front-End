@@ -13,8 +13,6 @@ describe("<Header />", () => {
 
     );
 
-    screen.logTestingPlaygroundURL();
-
     const imgAlt = screen.getByAltText(/shire shacks icon/i);
     expect(imgAlt).toHaveAttribute("src", "https://secretdallas.com/wp-content/uploads/2022/04/hobbit.png");
     expect(imgAlt).toHaveAttribute("alt", "shire shacks icon");
