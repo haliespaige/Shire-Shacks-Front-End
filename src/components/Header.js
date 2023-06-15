@@ -1,8 +1,17 @@
 import React from 'react'
-import {Navbar, NavbarBrand, Nav, NavItem, NavLink} from "reactstrap"
+import { Navbar, Nav, NavItem, NavLink } from "reactstrap"
+import { useNavigate } from 'react-router-dom'
 
+const Header = ({ currentUser }) => {
 
-const Header = ({currentUser}) => {
+  console.log("prop",currentUser)
+
+  const navigate = useNavigate()
+
+  // const handleClick = () => {
+  //   logout()
+  //   navigate("/")
+  // }
 
   return (
     <>
@@ -14,21 +23,39 @@ const Header = ({currentUser}) => {
             height="50"
           />
         </a>
-        <Nav className="me-auto" navbar>
-          <NavItem>
-            <NavLink href="/aptindex">Available Units</NavLink>
-          </NavItem>
+        <Nav className="nav">
+          {currentUser && (
+            <>
+              <NavItem>
+                <NavLink href="/">Your Units</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/">Add a Unit</NavLink>
+              </NavItem>
+              <NavItem>
+                <input
+                  type="button"
+                  value="Log Out"
+                  // onClick="{handleClick}"
+                />
+              </NavItem>
+            </>
+          )}
+          {!currentUser && (
+            <>
+              <NavItem>
+                <NavLink href="/login" className="nav-link">
+                  Log In
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/signup" className="nav-link">
+                  Sign Up
+                </NavLink>
+              </NavItem>
+            </>
+          )}
         </Nav>
-        <NavItem>
-          <NavLink href="/login" className="nav-link">
-            Log In
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/signup" className="nav-link">
-            Sign Up
-          </NavLink>
-        </NavItem>
       </Navbar>
     </>
   );

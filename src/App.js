@@ -17,14 +17,28 @@ import mockUsers from "./mockUsers";
 // import mockShacks from "./mockShacks";
 
 function App() {
+  
+
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
+
+  console.log(currentUser)
   // const [shacks, setShacks] = useState(mockShacks)
   const signup = () => {
-    
+
   }
+
+  const login = (currentUser) => {
+    console.log("Login", currentUser)
+  }
+
+  // const logout = (currentUser) => {
+  //   currentUser = null
+  //   console.log("Logout?", currentUser)
+  // }
+
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
@@ -33,7 +47,10 @@ function App() {
         <Route path="/shacknew" element={<ShackNew />} />
         <Route path="/shackprotectedindex" element={<ShackProtectedIndex />} />
         <Route path="/shackshow" element={<ShackShow />} />
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/login" element={<LogIn 
+        login={login}
+        currentUser={currentUser} 
+        />} />
         <Route path="/signup" element={<SignUp currentUser={currentUser}/>} />
       </Routes>
       <Footer />
