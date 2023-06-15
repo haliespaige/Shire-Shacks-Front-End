@@ -1,7 +1,8 @@
 import React from 'react'
-import {Navbar, NavbarBrand} from "reactstrap"
+import {Navbar, NavbarBrand, Nav, NavItem, NavLink} from "reactstrap"
 
-const Header = () => {
+
+const Header = ({currentUser}) => {
 
   return (
     <>
@@ -13,6 +14,21 @@ const Header = () => {
             height="50"
           />
         </a>
+        <Nav className="me-auto" navbar>
+          <NavItem>
+            <NavLink href="/aptindex">Available Units</NavLink>
+          </NavItem>
+        </Nav>
+        <NavItem>
+          <NavLink href="/login" className="nav-link">
+            Log In
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/signup" className="nav-link">
+            Sign Up
+          </NavLink>
+        </NavItem>
       </Navbar>
     </>
   );

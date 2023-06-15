@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LogIn from './components/LogIn';
@@ -12,8 +12,16 @@ import ShackProtectedIndex from './pages/ShackProtectedIndex';
 import ShackShow from './pages/ShackShow';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import mockUsers from "./mockUsers";
+
+// import mockShacks from "./mockShacks";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  // const [shacks, setShacks] = useState(mockShacks)
+  const signup = () => {
+    
+  }
   return (
     <>
       <Header />
@@ -26,7 +34,7 @@ function App() {
         <Route path="/shackprotectedindex" element={<ShackProtectedIndex />} />
         <Route path="/shackshow" element={<ShackShow />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp currentUser={currentUser}/>} />
       </Routes>
       <Footer />
     </>
