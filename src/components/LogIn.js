@@ -19,7 +19,7 @@ const LogIn = ({login}) => {
   };
 
   return (
-<div>
+<div data-testid="login">
       <form onSubmit={handleSubmit}>
         Email: <input type="email" name="email" placeholder="email" />
         <br />

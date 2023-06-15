@@ -12,7 +12,7 @@ describe("<Login />", () => {
       </BrowserRouter>
     );
 
-    const component = screen.getByTestId("login")
+    const component = screen.getByTestId("signup")
     expect(component).toBeInTheDocument();
   });
 });

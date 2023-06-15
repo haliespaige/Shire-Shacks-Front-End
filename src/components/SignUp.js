@@ -4,7 +4,7 @@ const SignUp = ({currentUser}) => {
   console.log("currentUser", currentUser)
   return (
     <>
-      <div>
+      <div data-testid="signup">
         <form>
           Email: <input type="email" name="email" placeholder="email" />
           <br />
