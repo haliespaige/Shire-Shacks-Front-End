@@ -13,16 +13,15 @@ import ShackShow from './pages/ShackShow';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import mockUsers from "./mockUsers";
+import mockShacks from './mockShacks';
 
-// import mockShacks from "./mockShacks";
-
-function App() {
+const App = () => {
   
 
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(null)
+  const [shacks, setShacks] = useState(mockShacks)
 
   console.log(currentUser)
-  // const [shacks, setShacks] = useState(mockShacks)
   const signup = () => {
 
   }
@@ -43,10 +42,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/shackedit" element={<ShackEdit />} />
-        <Route path="/shackindex" element={<ShackIndex />} />
+        <Route path="/shackindex" element={<ShackIndex shacks={shacks}/>} />
         <Route path="/shacknew" element={<ShackNew />} />
         <Route path="/shackprotectedindex" element={<ShackProtectedIndex />} />
-        <Route path="/shackshow" element={<ShackShow />} />
+        <Route path="/shackshow/:id" element={<ShackShow shacks={shacks}/>} />
         <Route path="/login" element={<LogIn 
         login={login}
         currentUser={currentUser} 
