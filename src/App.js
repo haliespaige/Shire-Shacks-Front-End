@@ -17,23 +17,16 @@ import mockShacks from './mockShacks';
 
 const App = () => {
   
-
   const [currentUser, setCurrentUser] = useState(null)
   const [shacks, setShacks] = useState(mockShacks)
 
   console.log(currentUser)
   const signup = () => {
-
   }
 
   const login = (currentUser) => {
     console.log("Login", currentUser)
   }
-
-  // const logout = (currentUser) => {
-  //   currentUser = null
-  //   console.log("Logout?", currentUser)
-  // }
 
   return (
     <>
