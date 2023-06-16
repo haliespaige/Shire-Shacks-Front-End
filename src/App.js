@@ -14,27 +14,13 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import mockUsers from "./mockUsers";
 
-// import mockShacks from "./mockShacks";
-
 function App() {
   
-
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
-
-  console.log(currentUser)
-  // const [shacks, setShacks] = useState(mockShacks)
-  const signup = () => {
-
-  }
 
   const login = (currentUser) => {
     console.log("Login", currentUser)
   }
-
-  // const logout = (currentUser) => {
-  //   currentUser = null
-  //   console.log("Logout?", currentUser)
-  // }
 
   return (
     <>

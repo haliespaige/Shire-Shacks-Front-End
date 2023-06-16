@@ -1,17 +1,9 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, NavLink } from "reactstrap"
-import { useNavigate } from 'react-router-dom'
 
 const Header = ({ currentUser }) => {
 
   console.log("prop",currentUser)
-
-  const navigate = useNavigate()
-
-  // const handleClick = () => {
-  //   logout()
-  //   navigate("/")
-  // }
 
   return (
     <>
@@ -36,7 +28,6 @@ const Header = ({ currentUser }) => {
                 <input
                   type="button"
                   value="Log Out"
-                  // onClick="{handleClick}"
                 />
               </NavItem>
             </>
