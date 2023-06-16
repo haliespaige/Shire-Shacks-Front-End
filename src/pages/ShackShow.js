@@ -9,7 +9,7 @@ const ShackShow = ({shacks}) => {
     <div data-testid="shackshow">
       {currentShack && (
         <>
-          <Card>
+          <Card className='shackcard'>
             <CardImg
               alt="a space you need to experience"
               src={currentShack.image}
