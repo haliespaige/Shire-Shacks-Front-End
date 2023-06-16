@@ -10,14 +10,15 @@ const ShackProtectedIndex = ({ currentUser, shacks }) => {
       console.log();
 
     return (
-      <>
+      <div data-testid="shackprotectedindex">
         <h3>My Shacks</h3>
 
-        <CardGroup>
+        <CardGroup className="shack-card">
           {myShacks?.map((shack, index) => {
             return (
               <Card key={index}>
                 <CardImg
+                  className="card-image"
                   alt="where dreams dwell in cozy earthy abodes"
                   src={shack.image}
                   top
@@ -31,7 +32,7 @@ const ShackProtectedIndex = ({ currentUser, shacks }) => {
             );
           })}
         </CardGroup>
-      </>
+      </div>
     );
   };
 
