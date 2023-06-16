@@ -4,13 +4,11 @@ import {Navbar, NavbarBrand} from "reactstrap"
 const Footer = () => {
 
   return (
-    <>
+    <div className='footer-container'>
       <Navbar fixed="bottom">
-        <NavbarBrand href="/">
           &copy; Shire Shacks Inc. | 2023
-        </NavbarBrand>
       </Navbar>
-    </>
+    </div>
   )
 
 }
