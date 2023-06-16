@@ -17,7 +17,7 @@ import mockShacks from './mockShacks';
 
 const App = () => {
   
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(mockUsers[1])
   const [shacks, setShacks] = useState(mockShacks)
 
   console.log(currentUser)
@@ -33,17 +33,22 @@ const App = () => {
       <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/shackedit" element={<ShackEdit />} />
-        <Route path="/shackindex" element={<ShackIndex shacks={shacks}/>} />
+        <Route path="/signup" element={<SignUp currentUser={currentUser} />} />
+        <Route path="/login" element={<LogIn login={login} currentUser={currentUser} />}/>
+        <Route path="/shackindex" element={<ShackIndex shacks={shacks} />} />
+        <Route path="/shackshow/:id" element={<ShackShow shacks={shacks} />} />
+        {/* <Route path="/myshacks" element={<ShackProtectedIndex />} /> */}
+        {currentUser && (
+          <Route
+          path="/myshacks"
+          element={
+            <ShackProtectedIndex currentUser={currentUser} shacks={shacks} />
+          }
+          />
+          )}
         <Route path="/shacknew" element={<ShackNew />} />
-        <Route path="/shackprotectedindex" element={<ShackProtectedIndex />} />
-        <Route path="/shackshow/:id" element={<ShackShow shacks={shacks}/>} />
-        <Route path="/login" element={<LogIn 
-        login={login}
-        currentUser={currentUser} 
-        />} />
-        <Route path="/signup" element={<SignUp currentUser={currentUser}/>} />
+        <Route path="/shackedit" element={<ShackEdit />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
