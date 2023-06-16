@@ -19,10 +19,10 @@ const Header = ({ currentUser }) => {
           {currentUser && (
             <>
               <NavItem>
-                <NavLink href="/">Your Units</NavLink>
+                <NavLink href="/myshacks">My Shacks</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Add a Unit</NavLink>
+                <NavLink href="/">Add Shack</NavLink>
               </NavItem>
               <NavItem>
                 <input

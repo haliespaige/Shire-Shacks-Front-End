@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.shack-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 2.5rem;
+}

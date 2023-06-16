@@ -37,7 +37,6 @@ const App = () => {
         <Route path="/login" element={<LogIn login={login} currentUser={currentUser} />}/>
         <Route path="/shackindex" element={<ShackIndex shacks={shacks} />} />
         <Route path="/shackshow/:id" element={<ShackShow shacks={shacks} />} />
-        {/* <Route path="/myshacks" element={<ShackProtectedIndex />} /> */}
         {currentUser && (
           <Route
           path="/myshacks"

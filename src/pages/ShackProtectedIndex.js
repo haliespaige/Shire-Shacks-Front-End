@@ -1,16 +1,15 @@
 import React from "react";
-import { Card, CardGroup, CardImg, CardBody, CardTitle, Button } from "reactstrap";
+import { Card, CardGroup, CardImg, CardBody, CardTitle, Button, NavLink } from "reactstrap";
 
 const ShackProtectedIndex = ({ currentUser, shacks }) => {
     const myShacks = shacks?.filter(
       (shack) => currentUser?.id === shack.user_id
     );
 
-      console.log("Current user: ", currentUser);
-      console.log();
+      
 
     return (
-      <div data-testid="shackprotectedindex">
+      <div className="shack-protected-index" data-testid="shackprotectedindex">
         <h3>My Shacks</h3>
 
         <CardGroup className="shack-card">
@@ -26,7 +25,13 @@ const ShackProtectedIndex = ({ currentUser, shacks }) => {
                 />
                 <CardBody>
                   <CardTitle tag="h5">Located in {shack.hill}</CardTitle>
-                  <Button>More Details</Button>
+                  <Button>
+                    <NavLink href={`/shackshow/${shack.id}`}>
+                      More Details
+                    </NavLink>
+                  </Button>
+                  <Button>Edit</Button>
+                  <Button>Delete</Button>
                 </CardBody>
               </Card>
             );
