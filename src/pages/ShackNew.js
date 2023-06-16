@@ -31,6 +31,7 @@ const ShackNew = ( {createShack, currentUser }) => {
 
   return (
     <div 
+      data-testid="shacknew"
       style={{
         backgroundImage: "url(back.png)",
         backgroundSize: "cover",
